@@ -1,31 +1,36 @@
-# Real Estate NFT DApp
+<!-- HouseMe – Real-Estate NFT + Escrow DApp -->
 
-## Technology Stack & Tools
+<div align="center">
+  <img src="src/assets/houseme-banner.png" width="720" alt="HouseMe banner"/>
+</div>
 
-- Solidity (Writing Smart Contracts & Tests)
-- Javascript (React & Testing)
-- [Hardhat](https://hardhat.org/) (Development Framework)
-- [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
-- [React.js](https://reactjs.org/) (Frontend Framework)
+# HouseMe 🏡
 
-## Requirements For Initial Setup
-- Install [NodeJS](https://nodejs.org/en/)
+**HouseMe** lets anyone mint a property as an ERC-721 NFT and sell it safely through an on-chain escrow contract that mirrors a traditional real-estate closing (buyer ↔ seller ↔ inspector ↔ lender).
 
-## Setting Up
-### 1. Clone/Download the Repository
+- **NFT title deed** – a `RealEstate.sol` token stores the off-chain metadata (IPFS) for each property.  
+- **Escrow workflow** – `Escrow.sol` handles earnest money, inspection status, multi-party approvals, and automatic settlement.  
+- **React front-end** – browse listings, connect MetaMask, and complete the purchase with one click.  
+- **Hardhat** stack – Solidity 0.8, Ethers v5, OpenZeppelin libs, full unit-test coverage.
 
-### 2. Install Dependencies:
-`$ npm install`
+> Demo video → *add Loom link here*  
+> Live test-net → *add Sepolia or Polygon Mumbai link here*
 
-### 3. Run tests
-`$ npx hardhat test`
+---
 
-### 4. Start Hardhat node
-`$ npx hardhat node`
+## 1. Quick Start
 
-### 5. Run deployment script
-In a separate terminal execute:
-`$ npx hardhat run ./scripts/deploy.js --network localhost`
+```bash
+# clone & install
+git clone https://github.com/Stephen-Odumirin/HouseMe.git
+cd HouseMe
+npm install          # installs both React & Hardhat deps
 
-### 7. Start frontend
-`$ npm run start`
+# compile & test
+npx hardhat compile
+npx hardhat test
+
+# local chain (http://127.0.0.1:8545)
+npx hardhat node
+# deploy contracts to the local chain
+npx hardhat run scripts/deploy.js --network localhost
